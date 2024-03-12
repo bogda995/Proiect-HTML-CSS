@@ -1,503 +1,368 @@
-/* Inline font declarations
-Most sites would strongly benefit from inlining font declarations and other critical styling in the <head> of the main document rather than including them in an external stylesheet. This allows the browser to discover the font declarations sooner as the browser doesn't need to wait for the external stylesheet to download. */
-/* @import url('https://fonts.cdnfonts.com/css/futura-std-4'); */
-/* @font-face {
-  font-family: 'Futura Std';
-  src: url('https://fonts.cdnfonts.com/css/futura-std-4') format('woff2');
-} */
-
-/* COLOR INSPIRING */
-/* https://logosbynick.com/nature-color-palette-hex/ */
-
 :root {
-     /* text-color charcoal black */
-     --color-text: #212121;
-     --color-text-hover: #e77e9b;
-     --font-logo: "Futura Std", system-ui, -apple-system, sans-serif;
-     --font-nav: "Futura Std", system-ui, -apple-system, sans-serif;
-     --font-logo-weight: 300;
-     --font-nav-weight: 300;
-     /* For much more detailed fluid font 
-     https://www.smashingmagazine.com/2016/05/fluid-typography/ */
-   
-     --font-logo-size: clamp(3rem, 1rem + 1vw, 4rem);
-     /* Scaling text
-   Switching between fixed text sizes at specific breakpoints is quite jumpy. A more responsive approach is to let the user's device width influence the text size.
-   
-   The vw unit in CSS stands for “viewport width.” Connecting font sizes to the viewport's width means that the text will grow and shrink in proportion to the browser width. This makes it difficult to predict what the text size will be at any specific width, but you know that the text size will be appropriate for the user's browser width.
-   
-   It's important that you don't use the vw by itself in a font-size declaration 
-   Clamping text
-   You probably don't want your text to shrink and grow to extremes. You can control where the scaling starts and ends using the CSS clamp() function. This “clamps” the scaling to a specific range.
-   
-   The clamp() function is like the calc() function but it takes three values. The middle value is the same as what you pass to calc(). The opening value specifies the minimum size, in this case 1rem so as to not go below the user's preferred font size. The closing value specifies the maximum size.
-   */
-   
-     --font-nav-size: clamp(0.5rem, 0.8rem + 0.5vw, 2rem);
-   }
-   
-   * {
-     margin: 0;
-     padding: 0;
-     box-sizing: border-box;
-   }
-   
-   /* html {
-     min-height: 100vh;
-   } */
-   
-   /* body.home, .about, .contact {
-     /* min-height: 100vh; */
-   /* https://web.dev/articles/optimize-css-background-images-with-media-queries */
-   /* Center the image vertically and horizontally. */
-   /* background-position:center center; */
-   /* Show the image only once. */
-   /* background-repeat: no-repeat; */
-   /* Avoid making the background image scroll. */
-   /* background-attachment: fixed; */
-   /* Resize the image to cover the entire container. */
-   /* background-size: cover; */
-   /* background-image: url("./assets/images/bird/b1.png"); */
-   /* margin-top: 3rem; */
-   
-   .container {
-     display: grid;
-     grid-template-columns: auto 1fr;
-     grid-template-rows: 1fr auto;
-     min-height: 100vh;
-     padding-inline: 3rem;
-     /* padding-block: 3rem; */
-     padding-block-start: 3rem;
-   }
-   
-   header {
-     color: var(--color-text);
-     background-color: white;
-     display: flex;
-     justify-content: start;
-     flex-direction: column;
-     align-items: start;
-     /* min-height: 100vh; */
-     grid-area: 1 / 1 / 4 / 2;
-     /* box-shadow: 2px 10px 10px 0px #000; */
-   }
-   
-   .bg-container {
-     grid-area: 1 / 2 / 4 / 4;
-     background-image: url("./assets/images/bird/b1.png");
-     /* min-height: 100vh; */
-     background-position: center center;
-     background-repeat: no-repeat;
-     background-attachment: fixed;
-     background-size: cover;
-   }
-   
-   /* Logo */
-   #logo {
-     text-decoration: none;
-     color: var(--color-text);
-     font-family: var(--font-logo);
-     font-weight: var(--font-logo-weight);
-     font-size: var(--font-logo-size);
-     line-height: 1;
-   }
-   
-   nav {
-     font-family: var(--font-nav);
-     font-weight: var(--font-nav-weight);
-     font-size: var(--font-nav-size);
-   }
-   
-   h1 {
-     margin-block-end: 3rem;
-   }
-   
-   ul {
-     display: grid;
-     grid-template-rows: repeat(3, 1fr);
-     grid-gap: 3rem;
-     list-style: none;
-   }
-   
-   nav ul li {
-     display: block;
-   }
-   
-   nav ul li a {
-     text-decoration: none;
-     color: var(--color-text);
-     border-block-end: 2px solid var(--border-color, transparent);
-   }
-   
-   nav ul li a:where(:hover, :focus) {
-     --border-color: var(--color-text-hover);
-     color: var(--color-text-hover);
-   }
-   
-   nav ul li a:active {
-     color: var(--color-text-hover);
-   }
-   
-   .form-wrapper {
-     position: fixed;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     inset-inline: 50vw;
-     inset-block: 50vh;
-     /* min-width: 30rem; */
-     /* max-width: 80%; */
-     height: 36rem;
-     max-height: 77%;
-     /* max-height: 70%; */
-     transform: translate(-50%, -50%);
-     background-color: #fff;
-     border: 1px solid #000;
-     border-radius: 5px;
-     box-shadow: 0.1rem 0.1rem 0.5rem 0 rgba(0, 0, 0, 0.5);
-   }
-   
-   label,
-   input,
-   textarea,
-   select,
-   button {
-     font-family: var(--font-nav);
-     font-size: var(--font-nav-size);
-     font-weight: 300;
-     line-height: 1.5;
-   }
-   
-   form {
-     width: 30em;
-     max-width: 90%;
-     margin: 0 auto;
-   }
-   
-   label {
-     margin-block-start: 1rem;
-     /* margin-block-end: .4rem; */
-   
-     display: block;
-   }
-   
-   .form-input,
-   .form-textarea {
-     padding: 0.1rem;
-     width: 100%;
-     border: 1px solid #000;
-     border-radius: 2px;
-   }
-   
-   .form-textarea {
-     margin-block-end: 1rem;
-   }
-   
-   /* #name:required {
-     border: 2px solid red;
-   } */
-   
-   /* Cannot resize captcha */
-   /* .h-captcha {
-     max-width: 3rem;
-   } */
-   
-   button {
-     padding-inline: 2rem;
-     padding-block: 0.1rem;
-     border: 1px solid #000;
-     border-radius: 2px;
-     /* reset: all; */
-   }
-   
-   button:hover {
-     cursor: pointer;
-   }
-   
-   /* button:focus {
-     outline: 1px solid green;
-   } */
-   
-   /* Works */
-   .content-container {
-     font-family: var(--font-nav);
-     font-size: var(--font-nav-size);
-     font-weight: var(--font-nav-weight);
-     line-height: 2;
-   }
-   
-   .section-anatomy:not(:last-child) {
-     margin-block-end: 5vw;
-   }
-   
-   section h2 {
-     font-weight: var(--font-nav-weight);
-   }
-   /* Works - END */
-   
-   footer {
-     grid-area: 3 / 1 / 4 / 4;
-     text-align: center;
-     background-color: white;
-     font-family: var(--font-nav);
-     font-size: clamp(0.1rem, 0.3rem + 0.3vw, 0.7rem);
-     font-weight: 100;
-     padding-block-start: 3rem;
-   }
-   
-   /*
-   aria-current (state) indicates the element that represents the current item within a container or set of related elements. A page token used to indicate a link within a set of pagination links, where the link is visually styled to represent the currently-displayed page. [Accessible Rich Internet Applications (WAI-ARIA) 1.1](https://www.w3.org/TR/wai-aria/#aria-current) */
-   /* [aria-current="page"] {
-     border-color: var(--color-text-hover);
-     color: var(--color-text-hover);
-   } */
-   
-   /*
-   #menu-open {
-     opacity: 1;
-   }
-   
-   #menu-open:checked ~ .menu-box {
-     left: 0 !important;
-   }
-   
-   .menu-box {
-     display: block;
-     position: fixed;
-     top: 0;
-     left: -100%;
-     width: 300px;
-     height: 100%;
-     margin: 0;
-     padding: 80px 0;
-     list-style: none;
-     background-color: #eceff1;
-     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
-     transition-duration: 0.25s;
-   }
-   
-   .menu-item {
-     display: block;
-     padding: 12px 24px;
-     color: #333;
-     font-family: "Roboto", sans-serif;
-     font-size: 20px;
-     font-weight: 600;
-     text-decoration: none;
-     transition-duration: 0.25s;
-   }
-   
-   .menu-item:hover {
-     background-color: #cfd8dc;
-   }
-   
-   .menu-btn {
-     /* position: fixed; */
-   /* cursor: pointer; */
-   
-   /* Mobile */
-   /* 320px — 480px: Mobile devices */
-   /* 481px — 768px: iPads, Tablets */
-   @media (max-width: 48rem) {
-     /* html {
-       font-size: 100%;
-     } */
-     .container {
-       display: grid;
-       grid-template-columns: 1fr;
-       grid-template-rows: 0.4fr 4fr 0.1fr;
-       /* min-height: 100vh; */
-       padding-inline: 0.5rem;
-       padding-block: 0rem;
-       /* padding-block-start: 0rem; */
-     }
-   
-     header {
-       grid-area: 1 / 1 / 2 / 2;
-       background-color: white;
-       flex-direction: row;
-       justify-content: space-between;
-       align-items: center;
-       margin: 0;
-       /* position: fixed; */
-     }
-   
-     #logo {
-       line-height: 1;
-       /* position: fixed; */
-       inset-inline-start: 0;
-       /* margin-top: 50px; */
-     }
-   
-     h1 {
-       margin: 0;
-     }
-   
-     #menu-open:checked ~ nav.menu-box {
-       display: block !important;
-       position: fixed;
-     }
-   
-     /* #menu-open ~ nav.menu-box {
-       display: none;
-     } */
-   
-     #menu-open:checked ~ nav ul {
-       display: flex !important;
-       flex-direction: column;
-       justify-content: start;
-       align-items: center;
-       text-align: center;
-       position: fixed;
-       background-color: #e77e9b;
-       /* min-width: 100vw;
-       min-height: 100vh; */
-       width: 100vw;
-       height: 100vh;
-       inset-inline: 50vw;
-       /* Problem when scaling upwards the menu */
-       inset-block: 10vw;
-       transform: translate(-50%, 0);
-       padding-block-start: 5rem;
-       /* transform: translate(-50%, -7rem); */
-     }
-   
-     /* HOW TO MAKE THE HAMBURGER BUTTON BIGGER */
-     /* Cursor pointer not working */
-     .menu-btn {
-       cursor: pointer;
-     }
-   
-     .menu-box {
-       display: none;
-       position: fixed;
-       /* background-color: #e77e9b; */
-     }
-   
-     /* Check if this is working */
-     .menu-item:hover {
-       border-color: #fff;
-       color: #fff;
-       cursor: pointer;
-     }
-   
-     input[type="checkbox"] {
-       appearance: none;
-     }
-   
-     .bg-container {
-       grid-area: 2 / 1 / 3 / 2;
-       background-image: url("./assets/images/bird/b1.png");
-       /* min-height: 100vh; */
-       background-position: center center;
-       background-repeat: no-repeat;
-       background-attachment: fixed;
-       background-size: cover;
-     }
-   
-     footer {
-       grid-area: 3 / 1 / 4 / 2;
-       padding-block: 0rem;
-       text-align: center;
-       align-self: end;
-     }
-   
-     .form-wrapper {
-       min-width: 70%;
-     }
-   }
-   
-   /* Tablets */
-   /* 481px — 768px: iPads, Tablets */
-   /* @media (min-width: 31rem) and (max-width: 48rem) { */
-   /* html {
-         font-size: 110%;
-       } */
-   
-   /* 769px — 1024px: Small screens, laptops */
-   @media (min-width: 48.06rem) {
-     /* html {
-         font-size: 130%;
-       } */
-     .container {
-       display: grid;
-       grid-template-columns: auto 1fr;
-       grid-template-rows: 1fr auto;
-       min-height: 100vh;
-       padding-inline: 3rem;
-       /* padding-block: 3rem; */
-       padding-block-start: 3rem;
-     }
-   
-     .menu-btn {
-       display: none;
-     }
-     input[type="checkbox"] {
-       appearance: none;
-     }
-   
-     footer {
-       padding-block-start: 1rem;
-     }
-   
-     /* Contact form */
-   
-     .form-wrapper{
-       min-width: 30%;
-       /* min-height: 30%; */
-       transform: translate(-30%, -50%);
-     }
-   
-     /* Works */
-     .works {
-       /* display: grid; */
-       min-height: 100vh;
-       padding-inline: 3rem;
-       /* padding-block: 3rem; */
-       padding-block-start: 3rem;
-     }
-   
-     .works-header {
-       position: fixed;
-       min-height: 100vh;
-       inset-block-start: 0;
-       padding-block-start: 3rem;
-     }
-   
-     .content-container {
-       inline-size: 71vw;
-       /* block-size: 100vh; */
-       transform: translate(30%, 0);
-     }
-   
-     section h2 {
-       position: absolute;
-       inset-inline-end: 0;
-       /* transform: translateX(70%); */
-     }
-   
-     .section-ch {
-       /* position: absolute; */
-       margin-top: 50%;
-     }
-   
-     .subheading-ch {
-       margin-bottom: 50px;
-     }
-   
-   
-   }
-   /* 1025px — 1200px: Desktops, large screens */
-   /* @media (min-width: 64.06rem) { */
-   /* html {
-         font-size: 135%;
-       } */
-   /* .menu-btn {
-         display: none;
-       }
-       input[type="checkbox"] {
-         appearance: none;
-       } */
-   /* } */
-   /* 1201px and more —  Extra large screens, TV */
-   
+  --color-text: #212121;
+  --color-text-hover: #e77e9b;
+  --font-logo: "Futura Std", system-ui, -apple-system, sans-serif;
+  --font-nav: "Futura Std", system-ui, -apple-system, sans-serif;
+  --font-logo-weight: 300;
+  --font-nav-weight: 300;
+  --font-logo-size: clamp(3rem, 1rem + 1vw, 4rem);
+  --font-nav-size: clamp(0.5rem, 0.8rem + 0.5vw, 2rem);
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: 1fr auto;
+  min-height: 100vh;
+  padding-inline: 3rem;
+  /* padding-block: 3rem; */
+  padding-block-start: 3rem;
+}
+
+/* Header */
+header {
+  color: var(--color-text);
+  background-color: white;
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  align-items: start;
+  grid-area: 1 / 1 / 4 / 2;
+}
+
+/* Hamburger menu */
+span.material-symbols-outlined {
+  font-size: 2.5rem;
+}
+
+.bg-container {
+  grid-area: 1 / 2 / 4 / 4;
+  background-image: url("./assets/images/bird/b1.png");
+  /* min-height: 100vh; */
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+/* Logo */
+#logo {
+  text-decoration: none;
+  color: var(--color-text);
+  font-family: var(--font-logo);
+  font-weight: var(--font-logo-weight);
+  font-size: var(--font-logo-size);
+  line-height: 1;
+}
+
+nav {
+  font-family: var(--font-nav);
+  font-weight: var(--font-nav-weight);
+  font-size: var(--font-nav-size);
+}
+
+h1 {
+  margin-block-end: 3rem;
+}
+
+ul {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 3rem;
+  list-style: none;
+}
+
+nav ul li {
+  display: block;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--color-text);
+  border-block-end: 2px solid var(--border-color, transparent);
+}
+
+nav ul li a:where(:hover, :focus) {
+  --border-color: var(--color-text-hover);
+  color: var(--color-text-hover);
+}
+
+nav ul li a:active {
+  color: var(--color-text-hover);
+}
+
+/* /Header End */
+
+/* Contact */
+.form-wrapper {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  inset-inline: 50vw;
+  inset-block: 50vh;
+  /* min-width: 30rem; */
+  /* max-width: 80%; */
+  height: 36rem;
+  max-height: 77%;
+  /* max-height: 70%; */
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 5px;
+  box-shadow: 0.1rem 0.1rem 0.5rem 0 rgba(0, 0, 0, 0.5);
+}
+
+label:not(.menu-btn),
+input,
+textarea,
+select,
+button {
+  font-family: var(--font-nav);
+  font-size: var(--font-nav-size);
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+form {
+  width: 30em;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+label:not(.menu-btn) {
+  margin-block-start: 1rem;
+  /* margin-block-end: .4rem; */
+
+  display: block;
+}
+
+.form-input,
+.form-textarea {
+  padding: 0.1rem;
+  width: 100%;
+  border: 1px solid #000;
+  border-radius: 2px;
+}
+
+.form-textarea {
+  margin-block-end: 1rem;
+}
+
+button {
+  padding-inline: 2rem;
+  padding-block: 0.1rem;
+  border: 1px solid #000;
+  border-radius: 2px;
+  /* reset: all; */
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+/* Contact END */
+
+/* Works */
+.content-container {
+  font-family: var(--font-nav);
+  font-size: var(--font-nav-size);
+  font-weight: var(--font-nav-weight);
+  line-height: 2;
+}
+
+section h2 {
+  font-weight: var(--font-nav-weight);
+}
+
+/* Works - END */
+
+footer {
+  grid-area: 3 / 1 / 4 / 4;
+  text-align: center;
+  background-color: white;
+  font-family: var(--font-nav);
+  font-size: clamp(0.1rem, 0.3rem + 0.3vw, 0.7rem);
+  font-weight: 100;
+  padding-block-start: 3rem;
+}
+
+/* Mobile */
+@media (max-width: 48rem) {
+
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.4fr 4fr 0.1fr;
+    padding-inline: 0.5rem;
+    padding-block: 0rem;
+  }
+
+  /* Header */
+  header {
+    grid-area: 1 / 1 / 2 / 2;
+    background-color: white;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+  }
+
+  #logo {
+    line-height: 1;
+    inset-inline-start: 0;
+  }
+
+  h1 {
+    margin: 0;
+  }
+
+  /* Menu on mobile */
+  #menu-open:checked~nav.menu-box {
+    display: block !important;
+    position: fixed;
+  }
+
+  #menu-open:checked~nav ul {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    text-align: center;
+    position: fixed;
+    background-color: #e77e9b;
+    width: 100vw;
+    height: 100vh;
+    inset-inline: 50vw;
+    inset-block: 10vw;
+    transform: translate(-50%, 0);
+    padding-block-start: 5rem;
+  }
+
+  .menu-btn {
+    cursor: pointer;
+    line-height: 0;
+  }
+
+  .menu-box {
+    display: none;
+    position: fixed;
+  }
+
+  .menu-item:hover {
+    border-color: #fff;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  input[type="checkbox"] {
+    appearance: none;
+  }
+
+  /* Menu button on mobile END */
+  /* Header END */
+
+  .bg-container {
+    grid-area: 2 / 1 / 3 / 2;
+    background-image: url("./assets/images/bird/b1.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+
+  /* Works */
+  .works {
+    padding-inline: 1em;
+    padding-block: 1rem;
+  }
+
+  /* Works END */
+
+  footer {
+    grid-area: 3 / 1 / 4 / 2;
+    padding-block: 0rem;
+    text-align: center;
+    align-self: end;
+  }
+
+  .form-wrapper {
+    min-width: 70%;
+  }
+}
+
+/* Desktop and Larger */
+@media (min-width: 48.06rem) {
+
+  .container {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr auto;
+    min-height: 100vh;
+    padding-inline: 3rem;
+    padding-block-start: 3rem;
+  }
+
+  .menu-btn {
+    display: none;
+  }
+
+  input[type="checkbox"] {
+    appearance: none;
+  }
+
+  footer {
+    padding-block-start: 1rem;
+  }
+
+  .form-wrapper {
+    min-width: 30%;
+    transform: translate(-30%, -50%);
+  }
+
+  /* Works */
+  .works {
+    min-height: 100vh;
+    padding-inline: 3rem;
+    padding-block-start: 3rem;
+  }
+
+  .works-header {
+    position: fixed;
+    min-height: 100vh;
+    inset-block-start: 0;
+    padding-block-start: 3rem;
+  }
+
+  .content-container {
+    inline-size: 71vw;
+    transform: translate(30%, 0);
+  }
+
+  section h2 {
+    position: absolute;
+    inset-inline-end: 0;
+  }
+  /* Works END */
+
+  .about-me-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+
+    font-family: var(--font-nav);
+    font-size: var(--font-nav-size);
+    font-weight: var(--font-nav-weight);
+  }
+
+  .about-me-wrapper h2 {
+    font-weight: var(--font-nav-weight);
+  }
+}
