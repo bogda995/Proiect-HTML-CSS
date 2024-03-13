@@ -291,7 +291,7 @@ footer {
     position: fixed;
   }
 
-  .menu-item:hover {
+  .menu-item:where(:hover, :active, :focus) {
     border-color: #fff;
     color: #fff;
     cursor: pointer;
