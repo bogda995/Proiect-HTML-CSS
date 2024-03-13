@@ -207,6 +207,7 @@ section h2 {
 .social-media img:where(:hover, :focus) {
   opacity: .5;
 }
+
 /* Social-media END*/
 /* About me  END*/
 
@@ -317,39 +318,52 @@ footer {
     padding-block: 1rem;
   }
 
-  .section-anatomy img, .section-ch img {
+  .section-anatomy img,
+  .section-ch img {
     max-inline-size: 100%;
     block-size: auto;
     object-fit: contain;
-    transition: all 500ms ease-out;
+  }
+
+  .section-anatomy img:not(:first-child),
+  .section-ch img {
+    animation: fade-in linear;
+    animation-timeline: view();
+    animation-range-start: 10px;
+    animation-range-end: 300px;
   }
 
   .content-container {
     padding-block: 2rem;
   }
 
-  .section-anatomy, .section-ch {
+  .section-anatomy,
+  .section-ch {
     display: flex;
     flex-direction: column;
     margin-block: 1rem;
   }
 
-  .section-anatomy h2, .section-ch h2 {
+  .section-anatomy h2,
+  .section-ch h2 {
     align-self: flex-end;
     margin-block: 1rem;
   }
 
-  .anatomy-images-wrapper, .ch-images-wrapper {
+  .anatomy-images-wrapper,
+  .ch-images-wrapper {
     margin-block: 1rem;
   }
 
-  .anatomy-images-wrapper img, .ch-images-wrapper img{
-    padding-block: 3rem;
-    padding-inline: 2rem;
+  .anatomy-images-wrapper img,
+  .ch-images-wrapper img {
+    padding-block: 1rem;
+    padding-inline: 0rem;
   }
 
-  .anatomy-images-wrapper img:not(:last-child), .ch-images-wrapper img:not(:last-child) {
-    margin-block-end: 1rem ;
+  .anatomy-images-wrapper img:not(:last-child),
+  .ch-images-wrapper img:not(:last-child) {
+    margin-block-end: 1rem;
   }
 
   /* Works END */
@@ -422,7 +436,7 @@ footer {
     flex-direction: column;
   }
 
-  .social-media{
+  .social-media {
     display: flex;
     flex-direction: row;
     gap: .6rem;
@@ -434,6 +448,7 @@ footer {
     padding-bottom: 10px;
     padding-top: 1px;
   }
+
   /* About Me END */
 }
 
@@ -486,17 +501,20 @@ footer {
     flex-direction: row;
   }
 
-  .section-anatomy, .section-ch {
+  .section-anatomy,
+  .section-ch {
     display: flex;
     flex-direction: column;
     align-items: end;
   }
 
-  .section-anatomy h2, .section-ch h2{
+  .section-anatomy h2,
+  .section-ch h2 {
     padding-inline-end: 2rem;
   }
 
-  .anatomy-images-wrapper, .ch-images-wrapper {
+  .anatomy-images-wrapper,
+  .ch-images-wrapper {
     display: flex;
     flex-direction: column;
     align-items: end;
@@ -506,7 +524,8 @@ footer {
 
   }
 
-  .anatomy-images-wrapper img, .ch-images-wrapper img {
+  .anatomy-images-wrapper img,
+  .ch-images-wrapper img {
     max-inline-size: 100%;
     block-size: auto;
     object-fit: contain;
@@ -515,9 +534,18 @@ footer {
     padding-inline: 1rem;
   }
 
-  #anatomy-vertical-img, #ch-vertical-img{
+  #anatomy-vertical-img,
+  #ch-vertical-img {
     max-inline-size: 70%;
     align-self: center;
+  }
+
+  .section-anatomy img:not(:first-child),
+  .section-ch img {
+    animation: fade-in linear;
+    animation-timeline: view();
+    animation-range-start: cover;
+    animation-range-end: 600px;
   }
 
   /* Works END */
@@ -588,7 +616,7 @@ footer {
     align-items: start;
   }
 
-  .social-media{
+  .social-media {
     display: flex;
     align-items: start;
     justify-content: start;
@@ -607,8 +635,10 @@ footer {
   /* About me END*/
 }
 
-@media (min-width:100rem){
-  .anatomy-images-wrapper, .ch-images-wrapper {
+@media (min-width:100rem) {
+
+  .anatomy-images-wrapper,
+  .ch-images-wrapper {
     display: flex;
     flex-direction: column;
     align-items: end;
@@ -617,18 +647,34 @@ footer {
     padding-block: 1rem 5rem;
   }
 
-  .anatomy-images-wrapper img, .ch-images-wrapper img {
+  .anatomy-images-wrapper img,
+  .ch-images-wrapper img {
     max-inline-size: 100%;
     block-size: auto;
     object-fit: contain;
-    padding-block:0 6rem;
+    padding-block: 0 6rem;
     margin-block: 1rem;
     padding-inline: 1rem;
     align-self: center;
   }
 
-  #anatomy-vertical-img, #ch-vertical-img{
+  #anatomy-vertical-img,
+  #ch-vertical-img {
     max-inline-size: 65%;
   }
 
 }
+
+/* Animation images */
+@keyframes fade-in {
+  from {
+    scale: .8;
+    opacity: 0;
+  }
+
+  to {
+    scale: 1;
+    opacity: 1;
+  }
+}
+/* Animation images END*/
