@@ -264,6 +264,7 @@ footer {
     block-size: 100vh;
     text-align: center;
     transition: all 300ms ease;
+    z-index: 1;
   }
 
   #menu-open:checked~nav ul {
@@ -325,11 +326,12 @@ footer {
     object-fit: contain;
   }
 
+  /* Animations images mobile */
   .section-anatomy img:not(:first-child),
   .section-ch img {
     animation: fade-in linear;
     animation-timeline: view();
-    animation-range-start: 10px;
+    animation-range-start: 50px;
     animation-range-end: 300px;
   }
 
