@@ -90,12 +90,14 @@ nav ul li a {
   text-decoration: none;
   color: var(--color-text);
   border-block-end: 2px solid var(--border-color, transparent);
+  transition: all 500ms ease-out;
 }
 
 nav ul li a:where(:hover, :focus) {
   --border-color: var(--color-text-hover);
   color: var(--color-text-hover);
 }
+
 /* /Header End */
 
 /* Contact */
@@ -159,7 +161,7 @@ button {
   border-radius: 0.2rem;
   background-color: rgba(0, 0, 0, 0.3);
   color: white;
-  /* reset: all; */
+  transition: all 300ms ease-in;
 }
 
 button:hover {
@@ -199,9 +201,10 @@ section h2 {
 /* Social-media */
 .social-media img {
   cursor: pointer;
+  transition: all 300ms ease;
 }
 
-.social-media img:where(:hover, :focus, :active) {
+.social-media img:where(:hover, :focus) {
   opacity: .5;
 }
 /* Social-media END*/
@@ -252,12 +255,14 @@ footer {
 
   #menu-open:checked~nav.menu-box {
     display: block !important;
-    background-color: #e77e9b;
+    background-color: rgb(231, 126, 155, 0.3);
+    backdrop-filter: blur(5px);
     inset-inline-end: 0;
     inset-block-start: 5rem;
     inline-size: 100vw;
     block-size: 100vh;
     text-align: center;
+    transition: all 300ms ease;
   }
 
   #menu-open:checked~nav ul {
@@ -266,11 +271,17 @@ footer {
     align-items: center;
     justify-content: end;
     block-size: 50%;
+    transition: all 300ms ease;
   }
 
   .menu-btn {
     cursor: pointer;
     line-height: 0;
+    transition: all 200ms ease-in;
+  }
+
+  .menu-btn:is(:hover, :focus, :active) {
+    color: var(--color-text-hover);
   }
 
   .menu-box {
@@ -306,37 +317,38 @@ footer {
     padding-block: 1rem;
   }
 
-  .section-anatomy img {
+  .section-anatomy img, .section-ch img {
     max-inline-size: 100%;
     block-size: auto;
     object-fit: contain;
+    transition: all 500ms ease-out;
   }
 
   .content-container {
     padding-block: 2rem;
   }
 
-  .section-anatomy {
+  .section-anatomy, .section-ch {
     display: flex;
     flex-direction: column;
     margin-block: 1rem;
   }
 
-  .section-anatomy h2 {
+  .section-anatomy h2, .section-ch h2 {
     align-self: flex-end;
     margin-block: 1rem;
   }
 
-  .anatomy-images-wrapper {
+  .anatomy-images-wrapper, .ch-images-wrapper {
     margin-block: 1rem;
   }
 
-  .anatomy-images-wrapper img {
+  .anatomy-images-wrapper img, .ch-images-wrapper img{
     padding-block: 3rem;
     padding-inline: 2rem;
   }
 
-  .anatomy-images-wrapper img:not(:last-child) {
+  .anatomy-images-wrapper img:not(:last-child), .ch-images-wrapper img:not(:last-child) {
     margin-block-end: 1rem ;
   }
 
@@ -375,7 +387,6 @@ footer {
   }
 
   .about-me-description h2 {
-    /* margin-block-end: 1rem; */
     text-transform: capitalize;
     padding-inline-start: 1rem;
   }
@@ -473,35 +484,38 @@ footer {
   #header-content-wrapper {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
   }
 
-  .section-anatomy {
+  .section-anatomy, .section-ch {
     display: flex;
     flex-direction: column;
     align-items: end;
   }
 
-  .section-anatomy h2{
+  .section-anatomy h2, .section-ch h2{
     padding-inline-end: 2rem;
   }
 
-  .anatomy-images-wrapper {
+  .anatomy-images-wrapper, .ch-images-wrapper {
     display: flex;
     flex-direction: column;
     align-items: end;
     justify-content: center;
+    max-inline-size: 100%;
+    padding-block: 1rem 5rem;
+
   }
 
-  .anatomy-images-wrapper img {
+  .anatomy-images-wrapper img, .ch-images-wrapper img {
     max-inline-size: 100%;
     block-size: auto;
     object-fit: contain;
-    padding-block: 5rem;
+    padding-block: 1rem;
     margin-block: 1rem;
-    padding-inline: 2rem;
+    padding-inline: 1rem;
   }
-  #anatomy-vertical-img{
+
+  #anatomy-vertical-img, #ch-vertical-img{
     max-inline-size: 70%;
     align-self: center;
   }
@@ -591,4 +605,30 @@ footer {
 
   /* Social-media END*/
   /* About me END*/
+}
+
+@media (min-width:100rem){
+  .anatomy-images-wrapper, .ch-images-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+    max-inline-size: 77%;
+    padding-block: 1rem 5rem;
+  }
+
+  .anatomy-images-wrapper img, .ch-images-wrapper img {
+    max-inline-size: 100%;
+    block-size: auto;
+    object-fit: contain;
+    padding-block:0 6rem;
+    margin-block: 1rem;
+    padding-inline: 1rem;
+    align-self: center;
+  }
+
+  #anatomy-vertical-img, #ch-vertical-img{
+    max-inline-size: 65%;
+  }
+
 }
