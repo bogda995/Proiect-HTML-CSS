@@ -23,7 +23,6 @@
   grid-template-rows: 1fr auto;
   min-height: 100vh;
   padding-inline: 3rem;
-  /* padding-block: 3rem; */
   padding-block-start: 3rem;
 }
 
@@ -46,7 +45,6 @@ span.material-symbols-outlined {
 .bg-container {
   grid-area: 1 / 2 / 4 / 4;
   background-image: url("./assets/images/bird/b1.png");
-  /* min-height: 100vh; */
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -98,11 +96,6 @@ nav ul li a:where(:hover, :focus) {
   --border-color: var(--color-text-hover);
   color: var(--color-text-hover);
 }
-
-nav ul li a:active {
-  color: var(--color-text-hover);
-}
-
 /* /Header End */
 
 /* Contact */
@@ -113,15 +106,13 @@ nav ul li a:active {
   align-items: center;
   inset-inline: 50vw;
   inset-block: 50vh;
-  /* min-width: 30rem; */
-  /* max-width: 80%; */
   height: 36rem;
   max-height: 77%;
-  /* max-height: 70%; */
   transform: translate(-50%, -50%);
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 5px;
   box-shadow: 0.1rem 0.1rem 0.5rem 0 rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
 }
 
 label:not(.menu-btn),
@@ -205,7 +196,17 @@ section h2 {
   font-size: var(--font-about-me-header-size);
 }
 
+/* Social-media */
+.social-media img {
+  cursor: pointer;
+}
+
+.social-media img:where(:hover, :focus, :active) {
+  opacity: .5;
+}
+/* Social-media END*/
 /* About me  END*/
+
 
 footer {
   grid-area: 3 / 1 / 4 / 4;
@@ -237,7 +238,6 @@ footer {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    /* margin: 0; */
     z-index: 1;
   }
 
@@ -368,10 +368,6 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr .1fr; */
-    /* min-height: 100vh; */
   }
 
   .about-me-description {
@@ -379,8 +375,7 @@ footer {
   }
 
   .about-me-description h2 {
-    /* font-size:medium; */
-    margin-block-end: 1rem;
+    /* margin-block-end: 1rem; */
     text-transform: capitalize;
     padding-inline-start: 1rem;
   }
@@ -411,6 +406,23 @@ footer {
     margin-block-end: 5rem;
   }
 
+  .header-social-media {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .social-media{
+    display: flex;
+    flex-direction: row;
+    gap: .6rem;
+    padding-inline-start: 1rem;
+    margin-block-end: 1rem;
+  }
+
+  .social-media img {
+    padding-bottom: 10px;
+    padding-top: 1px;
+  }
   /* About Me END */
 }
 
@@ -447,18 +459,15 @@ footer {
   .works {
     padding-inline: 3rem;
     padding-block-start: 3rem;
-    /* overflow: auto; */
   }
 
   .works-header {
     position: sticky;
-    /* min-height: 100vh; */
     inset-block-start: 0;
     inset-inline-start: 0;
     min-width: 15rem;
     margin-inline-end: 1rem;
     align-self: flex-start
-      /* padding-inline-start: 3rem; */
   }
 
   #header-content-wrapper {
@@ -507,7 +516,6 @@ footer {
     min-height: 100vh;
     padding-inline: 3rem;
     padding-block-start: 3rem;
-    /* overflow: hidden; */
   }
 
   .about-header {
@@ -517,21 +525,14 @@ footer {
 
   .about-me-wrapper {
     display: flex;
-    /* padding-block-end:3rem */
   }
 
   .about-me-description {
-    /* max-inline-size: 50% 100% auto auto; */
-    /* inset-inline: 50vw; */
-    /* inset-block: 50vh; */
-    /* height: auto; */
-    /* width: auto !important; */
     padding-inline: 1rem;
   }
 
   .about-me-description h2 {
-    margin-inline-end: 2rem;
-    margin-block: 1rem 2rem;
+    padding-block-start: 1rem;
     line-height: 1;
     text-transform: capitalize;
   }
@@ -551,15 +552,11 @@ footer {
 
   .about-me-wrapper img {
     object-fit: contain;
-    /* object-position: top center; */
     max-width: 20rem;
     height: auto;
-    /* object-position: 50% 50%; */
     display: block;
     margin-inline-start: auto;
     inset-inline-end: 0;
-    /* block-size: auto; */
-    /* max-inline-size: 100%; */
     object-fit: cover;
     padding-block: 5rem 1rem;
   }
@@ -569,5 +566,29 @@ footer {
     text-align: center;
   }
 
+  /* Social-media */
+  .header-social-media {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+  }
+
+  .social-media{
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    justify-self: start;
+    gap: .5rem;
+    margin-inline-end: 2rem;
+    margin-block: 0 2rem;
+  }
+
+  .social-media img {
+    padding-bottom: 10px;
+    padding-top: 1px;
+  }
+
+  /* Social-media END*/
   /* About me END*/
 }
