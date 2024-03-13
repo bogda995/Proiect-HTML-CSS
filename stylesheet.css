@@ -295,6 +295,7 @@ footer {
     border-color: #fff;
     color: #fff;
     cursor: pointer;
+    z-index: 3;
   }
 
   input[type="checkbox"] {
