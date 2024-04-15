@@ -18,9 +18,9 @@
   font-weight: normal;
   font-style: normal;
   src: local(FuturaLTProBook),
-    url("../assets/fonts/Futura/FuturaLTProLight.woff2"),
-    url("../assets/fonts/Futura/FuturaLTProLight.woff"),
-    url("../assets/fonts/Futura/FuturaLTProLight.otf");
+    url("./assets/Futura/FuturaLTProLight.woff2"),
+    url("./assets/Futura/FuturaLTProLight.woff"),
+    url("./assets/Futura/FuturaLTProLight.otf");
 }
 
 /* Reset */
