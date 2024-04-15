@@ -1,13 +1,26 @@
 :root {
   --color-text: #212121;
   --color-text-hover: #e77e9b;
-  --font-logo: "Futura Std", system-ui, -apple-system, sans-serif;
-  --font-nav: "Futura Std", system-ui, -apple-system, sans-serif;
+  --font-logo: "FuturaLTProLight", system-ui, "Segoe UI", Roboto, Helvetica, Arial,
+  sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-nav: "FuturaLTProLight", system-ui, "Segoe UI", Roboto, Helvetica, Arial,
+  sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   --font-logo-weight: 300;
   --font-nav-weight: 300;
   --font-logo-size: clamp(3rem, 1rem + 1vw, 4rem);
   --font-nav-size: clamp(0.5rem, 0.8rem + 0.5vw, 2rem);
   --font-about-me-header-size: 1.5rem;
+}
+
+@font-face {
+  font-family: "FuturaLTProLight";
+  font-display: swap;
+  font-weight: normal;
+  font-style: normal;
+  src: local(FuturaLTProBook),
+    url("../assets/fonts/Futura/FuturaLTProLight.woff2"),
+    url("../assets/fonts/Futura/FuturaLTProLight.woff"),
+    url("../assets/fonts/Futura/FuturaLTProLight.otf");
 }
 
 /* Reset */
