@@ -211,7 +211,6 @@ section h2 {
 /* Social-media END*/
 /* About me  END*/
 
-
 footer {
   grid-area: 3 / 1 / 4 / 4;
   text-align: center;
@@ -221,8 +220,6 @@ footer {
   font-weight: 100;
   padding-block-start: 3rem;
 }
-
-
 
 /* MEDIA QUERIES */
 /* Mobile */
@@ -523,7 +520,8 @@ footer {
     align-items: end;
     justify-content: center;
     max-inline-size: 100%;
-    padding-block: 1rem 5rem;
+    padding-block: 0rem 5rem;
+    /* inset-block-start: 0; */
 
   }
 
@@ -539,8 +537,9 @@ footer {
 
   #anatomy-vertical-img,
   #ch-vertical-img {
-    max-inline-size: 70%;
-    align-self: center;
+    max-inline-size: 100%;
+    align-self: flex-start;
+
   }
 
   .section-anatomy img:not(:first-child),
