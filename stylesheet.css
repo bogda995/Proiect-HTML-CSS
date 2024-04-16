@@ -52,8 +52,18 @@ header {
 }
 
 /* Hamburger menu */
-span.material-symbols-outlined {
+/* span.material-symbols-outlined {
   font-size: 2.5rem;
+} */
+
+#hamenu {
+  display: block;
+  height: 2rem;
+  width: 3rem;
+}
+
+#hamenu:is(:hover, :focus){
+  transform: scale(1.1);
 }
 
 .bg-container {
@@ -150,8 +160,6 @@ form {
 
 label:not(.menu-btn) {
   margin-block-start: 1rem;
-  /* margin-block-end: .4rem; */
-
   display: block;
 }
 
@@ -310,7 +318,7 @@ footer {
   }
 
   input[type="checkbox"] {
-    appearance: none;
+    display: none;
   }
 
   /* Menu button on mobile END */
