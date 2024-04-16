@@ -1,130 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Bogdan Man" />
+    <meta
+      name="description"
+      content="Portofolio for art including photos graphic design and other forms of art"
+    />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="author" content="Bogdan Man" />
-  <meta name="description" content="Portofolio for art including photos graphic design and other forms of art" />
+    <link rel="icon" href="./assets/l.png" />
+    <script src="lazysizes.min.js" async=""></script>
+    <link rel="stylesheet" href="stylesheet.css" />
 
-  <link rel="icon" href="./assets/l.png" />
-  <script src="lazysizes.min.js" async=""></script>
-  <link rel="stylesheet" href="stylesheet.css" />
+    <title>Ioana Man</title>
+  </head>
 
-  <title>Ioana Man</title>
-</head>
+  <body>
+    <div class="works">
+      <div id="header-content-wrapper">
+        <header class="works-header">
+          <h1>
+            <a href="index.html" id="logo">ioana man</a>
+          </h1>
+          <input type="checkbox" id="menu-open" />
+          <label for="menu-open" class="menu-btn">
+            <img id="hamenu" src="./assets/hamenu.svg" alt="hamburger menu" />
+          </label>
+          <nav class="menu-box">
+            <ul>
+              <li>
+                <a class="menu-item" href="index.html" aria-current="page"
+                  >home
+                </a>
+              </li>
+              <li>
+                <a class="menu-item" href="works.html"> works</a>
+              </li>
+              <li>
+                <a class="menu-item" href="about.html">about</a>
+              </li>
+              <li>
+                <a class="menu-item" href="/contact.html">contact</a>
+              </li>
+            </ul>
+          </nav>
+        </header>
 
-<body>
-  <div class="works">
-    <div id="header-content-wrapper">
-      <header class="works-header">
-        <h1>
-          <a href="index.html" id="logo">ioana man</a>
-        </h1>
-        <input type="checkbox" id="menu-open" />
-        <label for="menu-open" class="menu-btn">
-          <img id="hamenu" src="./assets/hamenu.svg" alt="hamburger menu" />
-        </label>
-        <nav class="menu-box">
-          <ul>
-            <li>
-              <a class="menu-item" href="index.html" aria-current="page">home </a>
-            </li>
-            <li>
-              <a class="menu-item" href="works.html"> works</a>
-            </li>
-            <li>
-              <a class="menu-item" href="about.html">about</a>
-            </li>
-            <li>
-              <a class="menu-item" href="/contact.html">contact</a>
-            </li>
-          </ul>
-        </nav>
-      </header>
+        <div class="content-container">
+          <!-- Section Anatomy -->
+          <section class="section-anatomy">
+            <h2>Anatomy Studies</h2>
 
-      <div class="content-container">
-        <!-- Section Anatomy -->
-        <section class="section-anatomy">
-
-          <h2>Anatomy Studies</h2>
-
-          <div class="anatomy-images-wrapper">
-            <picture>
-              <source
-                data-srcset="./assets/images/a1-mobile.JPG 768w"
-                media="(max-width: 768px)" />
-              <source
-                data-srcset="./assets/images/a1-laptop.JPG 1024w"
-                media="(min-width: 769px) 80vw"
-              />
-              <img
+            <div class="anatomy-images-wrapper">
+              <picture>
+                <img
+                  data-srcset="
+                    ./assets/images/a1-mobile.JPG 768w,
+                    ./assets/images/a1-laptop.JPG 1024w"
+                  sizes="(min-width: 1100px) 60vw,
+                    (min-width: 780px) calc(84vw - 259px),
+                    calc(100vw - 32px)"
                   data-src="./assets/images/a1-laptop.JPG"
                   fetchpriority="high"
                   class="lazyload"
                   alt="anatomy image"
+                />
+              </picture>
+              <picture>
+                <img
+                  src="./assets/images/a2-mobile.JPG"
+                  srcset="
+                    ./assets/images/a2-mobile.JPG  768w,
+                    ./assets/images/a2-laptop.JPG 1024w
+                  "
+                  sizes="(min-width: 48em) 50vw,
+                     100vw"
+                  alt="Drawing 2"
+                />
+              </picture>
+              <picture>
+                <img
+                  src="./assets/images/a3-mobile.JPG"
+                  srcset="
+                    ./assets/images/a3-mobile.JPG  768w,
+                    ./assets/images/a3-laptop.JPG 1024w
+                  "
+                  sizes="(min-width: 48em) 50vw,
+                     100vw"
+                  alt="Drawing 3"
+                />
+              </picture>
+              <picture>
+                <img
+                  src="./assets/images/a4-mobile.JPG"
+                  srcset="
+                    ./assets/images/a4-mobile.JPG  350w,
+                    ./assets/images/a4-laptop.JPG 1024w
+                  "
+                  sizes="(min-width: 48em) 90vh,
+                     100vw"
+                  alt="Drawing 4"
+                />
+              </picture>
+
+              <picture>
+                <img
+                  src="./assets/images/a5-mobile.JPG"
+                  srcset="
+                    ./assets/images/a5-mobile.JPG  350w,
+                    ./assets/images/a5-laptop.JPG 1024w
+                  "
+                  sizes="(min-width: 48em) 90vh,
+                     100vw"
+                  alt="Drawing 5"
+                />
+              </picture>
+            </div>
+          </section>
+
+          <!-- Sections Chemigrams -->
+          <section class="section-ch">
+            <h2>Chemigrams</h2>
+            <div class="ch-images-wrapper">
+              <img
+                id="ch-vertical-img"
+                src="./assets/images/Chemigrame/IMG_5111.jpg"
+                alt="chemigram1"
+                loading="lazy"
               />
-              <!-- data-srcset="
-              ./assets/images/a1-mobile.JPG 768w,
-              ./assets/images/a1-laptop.JPG 1024w"
-                              sizes="(min-width: 1100px) 60vw,
-                  (min-width: 780px) calc(84vw - 259px),
-                  calc(100vw - 32px)"
-            -->
-            </picture>
-            <picture>
-              <img src="./assets/images/a2-mobile.JPG"
-              srcset="./assets/images/a2-mobile.JPG  768w,
-                      ./assets/images/a2-laptop.JPG 1024w"
-              sizes="(min-width: 48em) 50vw,
-                     100vw"
-              alt="Drawing 2" />
-            </picture>
-            <picture>
-              <img src="./assets/images/a3-mobile.JPG"
-              srcset="./assets/images/a3-mobile.JPG  768w,
-                      ./assets/images/a3-laptop.JPG 1024w"
-              sizes="(min-width: 48em) 50vw,
-                     100vw"
-              alt="Drawing 3" />
-            </picture>
-            <picture>
-              <img src="./assets/images/a4-mobile.JPG"
-              srcset="./assets/images/a4-mobile.JPG  350w,
-                      ./assets/images/a4-laptop.JPG 1024w"
-              sizes="(min-width: 48em) 90vh,
-                     100vw"
-              alt="Drawing 4" />
-            </picture>
-
-            <picture>
-              <img src="./assets/images/a5-mobile.JPG"
-              srcset="./assets/images/a5-mobile.JPG  350w,
-                      ./assets/images/a5-laptop.JPG 1024w"
-              sizes="(min-width: 48em) 90vh,
-                     100vw"
-              alt="Drawing 5" />
-            </picture>
-          </div>
-        </section>
-
-        <!-- Sections Chemigrams -->
-        <section class="section-ch">
-          <h2>Chemigrams</h2>
-          <div class="ch-images-wrapper">
-            <img id="ch-vertical-img" src="./assets/images/Chemigrame/IMG_5111.jpg" alt="chemigram1" loading="lazy" />
-            <img id="ch-vertical-img" src="./assets/images/Chemigrame/IMG_5114.jpg" alt="chemigram2" loading="lazy" />
-            <img id="ch-vertical-img" src="./assets/images/Chemigrame/IMG_5115.jpg" alt="chemigram3" loading="lazy" />
-            <img id="ch-vertical-img" src="./assets/images/Chemigrame/IMG_5118.jpg" alt="chemigram4" loading="lazy" />
-            <img src="./assets/images/Chemigrame/IMG_5119.jpg" alt="chemigram5" loading="lazy" />
-            <img src="./assets/images/Chemigrame/IMG_5123.jpg" alt="chemigram6" loading="lazy" />
-            <img src="./assets/images/Chemigrame/IMG_5124.jpg" alt="chemigram7" loading="lazy" />
-            <img src="./assets/images/Chemigrame/IMG_5126.jpg" alt="chemigram8" loading="lazy" />
-          </div>
-        </section>
+              <img
+                id="ch-vertical-img"
+                src="./assets/images/Chemigrame/IMG_5114.jpg"
+                alt="chemigram2"
+                loading="lazy"
+              />
+              <img
+                id="ch-vertical-img"
+                src="./assets/images/Chemigrame/IMG_5115.jpg"
+                alt="chemigram3"
+                loading="lazy"
+              />
+              <img
+                id="ch-vertical-img"
+                src="./assets/images/Chemigrame/IMG_5118.jpg"
+                alt="chemigram4"
+                loading="lazy"
+              />
+              <img
+                src="./assets/images/Chemigrame/IMG_5119.jpg"
+                alt="chemigram5"
+                loading="lazy"
+              />
+              <img
+                src="./assets/images/Chemigrame/IMG_5123.jpg"
+                alt="chemigram6"
+                loading="lazy"
+              />
+              <img
+                src="./assets/images/Chemigrame/IMG_5124.jpg"
+                alt="chemigram7"
+                loading="lazy"
+              />
+              <img
+                src="./assets/images/Chemigrame/IMG_5126.jpg"
+                alt="chemigram8"
+                loading="lazy"
+              />
+            </div>
+          </section>
+        </div>
       </div>
+      <footer>Copyright &amp; 2024</footer>
     </div>
-    <footer>Copyright &amp; 2024</footer>
-  </div>
-</body>
+  </body>
 </html>
