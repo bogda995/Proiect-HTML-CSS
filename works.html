@@ -10,7 +10,7 @@
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
   <link rel="icon" href="./assets/l.png" />
-
+  <script src="lazysizes.min.js" async=""></script>
   <link rel="stylesheet" href="stylesheet.css" />
 
   <title>Ioana Man</title>
@@ -53,12 +53,15 @@
 
           <div class="anatomy-images-wrapper">
             <picture>
-              <img src="./assets/images/a1-mobile.JPG"
-              srcset="./assets/images/a1-mobile.JPG  768w,
-                      ./assets/images/a1-laptop.JPG 1024w"
-              sizes="(min-width: 48em) 50vw,
+              <img
+                  data-src="./assets/images/a1-mobile.JPG"
+                  data-srcset="
+                  ./assets/images/a1-mobile.JPG 768w,
+                  ./assets/images/a1-laptop.JPG 1024w"
+                  sizes="(min-width: 768px) 60vw,
                      100vw"
-              alt="Drawing 1" />
+                  class="lazyload"
+              />
             </picture>
             <picture>
               <img src="./assets/images/a2-mobile.JPG"

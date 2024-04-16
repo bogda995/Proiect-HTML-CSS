@@ -1,3 +1,4 @@
+
 :root {
   --color-text: #212121;
   --color-text-hover: #e77e9b;
@@ -512,6 +513,7 @@ footer {
   #header-content-wrapper {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
   }
 
   .section-anatomy,
