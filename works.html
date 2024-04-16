@@ -53,14 +53,26 @@
 
           <div class="anatomy-images-wrapper">
             <picture>
-              <img
-                  data-src="./assets/images/a1-mobile.JPG"
-                  data-srcset="
-                  ./assets/images/a1-mobile.JPG 768w,
-                  ./assets/images/a1-laptop.JPG 1024w"
-                  sizes="(min-width: 1100px) 60vw, (min-width: 780px) calc(84vw - 259px), calc(100vw - 32px)"
-                  class="lazyload blur-up"
+              <source
+                data-srcset="./assets/images/a1-mobile.JPG 768w"
+                media="(max-width: 768px)" />
+              <source
+                data-srcset="./assets/images/a1-laptop.JPG 1024w"
+                media="(min-width: 769px) 80vw"
               />
+              <img
+                  data-src="./assets/images/a1-laptop.JPG"
+                  fetchpriority="high"
+                  class="lazyload"
+                  alt="anatomy image"
+              />
+              <!-- data-srcset="
+              ./assets/images/a1-mobile.JPG 768w,
+              ./assets/images/a1-laptop.JPG 1024w"
+                              sizes="(min-width: 1100px) 60vw,
+                  (min-width: 780px) calc(84vw - 259px),
+                  calc(100vw - 32px)"
+            -->
             </picture>
             <picture>
               <img src="./assets/images/a2-mobile.JPG"
